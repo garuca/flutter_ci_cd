@@ -16,14 +16,20 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: 'stable'
-      # Get flutter dependencies.
+
+      - name: Install dependencies
       - run: flutter pub get
-
-      # Check for any formatting issues in the code.
+      - name: Check for any formatting issues
       - run: flutter format --set-exit-if-changed .
-
-      # Statically analyze the Dart code for any errors.
+      - name: Statically analyze
       - run: flutter analyze .
-
-      # Run widget tests for our flutter project.
+      - name: Run tests
       - run: flutter test
+      - name: Generate build
+      - run: flutter build apk
+      - uses: actions/upload-artifact@master
+        with:
+          name: apk-release
+          path: build/app/outputs/bundle/release/app-release.apk
+
+
