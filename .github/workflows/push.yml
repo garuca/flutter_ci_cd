@@ -18,12 +18,12 @@ jobs:
           channel: 'stable'
 
       - name: Install dependencies
-      - run: flutter pub get
+        run: flutter pub get
       - name: Check for any formatting issues
-      - run: flutter format --set-exit-if-changed .
+        run: flutter format --set-exit-if-changed .
       - name: Statically analyze
-      - run: flutter analyze .
+        run: flutter analyze .
       - name: Run tests
-      - run: flutter test
+        run: flutter test
 
 
