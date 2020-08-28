@@ -25,11 +25,5 @@ jobs:
       - run: flutter analyze .
       - name: Run tests
       - run: flutter test
-      - name: Generate build
-      - run: flutter build apk
-      - uses: actions/upload-artifact@master
-        with:
-          name: apk-release
-          path: build/app/outputs/bundle/release/app-release.apk
 
 
