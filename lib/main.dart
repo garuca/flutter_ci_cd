@@ -51,10 +51,10 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
                   });
                 },
               ),
-              onTap: (){
-                if(_controller.value>0.5){
+              onTap: () {
+                if (_controller.value > 0.5) {
                   _controller.animateTo(0.5);
-                }else{
+                } else {
                   _controller.animateTo(7.4);
                 }
               },
@@ -70,10 +70,10 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
                   });
                 },
               ),
-              onTap: (){
-                if(_controller.value>0.5){
+              onTap: () {
+                if (_controller.value > 0.5) {
                   _controller.animateTo(0.5);
-                }else{
+                } else {
                   _controller.animateTo(7.4);
                 }
               },
