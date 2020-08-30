@@ -40,17 +40,46 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
         body: Column(
           children: <Widget>[
             const SizedBox(height: 20),
-            Lottie.asset(
-              'assets/toggle-day-and-night.json',
-              controller: _controller,
-              height: 300,
-              onLoaded: (composition) {
-                setState(() {
-                  _controller.duration = composition.duration;
-                });
+            GestureDetector(
+              child: Lottie.asset(
+                'assets/toggle-day-and-night.json',
+                controller: _controller,
+                height: 300,
+                onLoaded: (composition) {
+                  setState(() {
+                    _controller.duration = composition.duration;
+                  });
+                },
+              ),
+              onTap: (){
+                if(_controller.value>0.5){
+                  _controller.animateTo(0.5);
+                }else{
+                  _controller.animateTo(7.4);
+                }
+              },
+            ),
+            GestureDetector(
+              child: Lottie.asset(
+                'assets/toggle-day-and-night.json',
+                controller: _controller,
+                height: 50,
+                onLoaded: (composition) {
+                  setState(() {
+                    _controller.duration = composition.duration;
+                  });
+                },
+              ),
+              onTap: (){
+                if(_controller.value>0.5){
+                  _controller.animateTo(0.5);
+                }else{
+                  _controller.animateTo(7.4);
+                }
               },
             ),
             Text('${_controller.value.toStringAsFixed(4)}'),
+            const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
